@@ -1,0 +1,25 @@
+name: '🎨 UI'
+description: '화면 또는 UI 컴포넌트를 구현합니다.'
+title: '[UI] '
+labels:
+  - '🎨 UI'
+
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: '🎨 구현 내용'
+      placeholder: |
+        - [ ] 화면 레이아웃 구현
+        - [ ] 디자인 토큰 적용
+        - [ ] 상태별 UI 반영
+      value: |
+        - [ ]
+    validations:
+      required: true
+
+  - type: input
+    id: figma
+    attributes:
+      label: '🔗 Figma'
+      placeholder: 'Figma URL'
