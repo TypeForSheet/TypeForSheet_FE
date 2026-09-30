@@ -1,0 +1,24 @@
+name: '🐛 Fix'
+description: '버그 및 오류를 수정합니다.'
+title: '[FIX] '
+labels:
+  - '🐛 FIX'
+
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: '🐛 문제 상황'
+      description: '발생한 문제를 간단히 작성해주세요.'
+      placeholder: '어떤 문제가 발생했는지 작성해주세요.'
+    validations:
+      required: true
+
+  - type: textarea
+    id: changes
+    attributes:
+      label: '🔧 수정 내용'
+      value: |
+        - [ ]
+    validations:
+      required: true
