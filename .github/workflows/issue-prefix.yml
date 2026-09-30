@@ -1,0 +1,31 @@
+name: Add TFS issue prefix
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  add-prefix:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add TFS number to issue title
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const prefix = `[TFS-${issue.number}]`;
+
+            if (issue.title.startsWith(prefix)) {
+              return;
+            }
+
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              title: `${prefix} ${issue.title}`,
+            });
