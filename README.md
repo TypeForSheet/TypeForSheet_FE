@@ -1,56 +1,164 @@
-# Welcome to your Expo app 👋
+# 🎧 TypeForSheet
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+> 좋아하는 음악을 평가하고, 그 음악과 함께한 나의 순간까지 기록하는 개인 음악 아카이브
 
-## Get started
+TypeForSheet는 음악을 단순히 저장하거나 평가하는 것을 넘어,  
+**음악에 대한 감상과 개인적인 이야기를 시간과 함께 기록하고 다시 돌아볼 수 있는 서비스**입니다.
 
-1. Install dependencies
+**음악 → 평가 → 감상/이야기 → 기록 → 축적 → 회고**
 
-   ```bash
-   npm install
-   ```
+의 흐름을 통해 나만의 음악 아카이브를 만들어갑니다.
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## ✨ 주요 기능
 
-In the output, you'll find options to open the app in a
+- 🔍 음악 검색 및 선택
+- ⭐ 별점 및 자유로운 음악 기록
+- 📝 기록 수정 및 삭제
+- 🗂 시간별 / 앨범별 음악 아카이브
+- 👀 같은 음악에 대한 다른 사용자의 공개 기록 탐색
+- 🔐 Kakao / Google / Apple 로그인 및 온보딩
+- 👤 마이페이지 및 설정
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🛠 Tech Stack
 
-## Get a fresh project
+### Frontend
 
-When you're ready, run:
+- React Native
+- Expo SDK 57
+- TypeScript
+- Expo Router
+
+### Development
+
+- ESLint
+- Prettier
+- TypeScript Strict Mode
+
+### Design
+
+- Figma
+- Design Token
+- Common Component
+
+---
+
+## 📱 Support
+
+| Platform | Minimum Version     |
+| -------- | ------------------- |
+| iOS      | iOS 18.0            |
+| Android  | Android 10 / API 29 |
+
+---
+
+## 🚀 Getting Started
+
+### Clone
 
 ```bash
-npm run reset-project
+git clone https://github.com/TypeForSheet/TypeForSheet_FE.git
+cd TypeForSheet_FE
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Install
 
-### Other setup steps
+```bash
+npm install
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+### Run
 
-## Learn more
+```bash
+npm start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+iOS:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm run ios
+```
 
-## Join the community
+Android:
 
-Join our community of developers creating universal apps.
+```bash
+npm run android
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## ✅ Code Check
+
+PR 생성 전 아래 명령어를 실행합니다.
+
+```bash
+npm run format:check
+npm run lint
+npm run typecheck
+npx expo-doctor
+```
+
+---
+
+## 🌿 Git Convention
+
+### Branch
+
+```text
+main
+└── dev
+    └── 작업 브랜치
+```
+
+- `main`: 배포 기준 브랜치
+- `dev`: 개발 통합 브랜치
+- 작업 브랜치는 Issue 기반으로 생성합니다.
+
+```text
+label/#issue-number-description
+```
+
+예시:
+
+```text
+feat/#12-login
+ui/#13-home
+fix/#14-search
+chore/#15-config
+```
+
+### Frontend Label
+
+`FEAT` · `UI` · `FIX` · `REFACTOR` · `ADD` · `CHORE` · `HOTFIX` · `DELETE` · `DOCS`
+
+---
+
+## 🔀 Workflow
+
+```text
+Issue 생성
+    ↓
+작업 브랜치 생성
+    ↓
+개발
+    ↓
+PR → dev
+    ↓
+Code Review
+    ↓
+Merge
+```
+
+- 모든 작업은 Issue와 연결합니다.
+- 일반 작업 PR은 `dev` 브랜치를 대상으로 생성합니다.
+- 파트장 Approve 후 Merge합니다.
+- CodeRabbit Review 내용을 모두 Resolve한 후 Merge합니다.
+
+---
+
+## TypeForSheet
+
+**Record the music. Remember the moment. 🎵**
