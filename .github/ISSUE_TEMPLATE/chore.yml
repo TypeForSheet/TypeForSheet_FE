@@ -9,10 +9,8 @@ body:
     id: summary
     attributes:
       label: '🔧 변경 내용'
-      placeholder: |
+      value: |
         - [ ] 변경 사항 1
         - [ ] 변경 사항 2
-      value: |
-        - [ ]
     validations:
       required: true

@@ -1,4 +1,4 @@
-# 🎧 TypeForSheet
+# 🎧 TypeForSheet Frontend
 
 > 좋아하는 음악을 평가하고, 그 음악과 함께한 나의 순간까지 기록하는 개인 음악 아카이브
 
@@ -154,7 +154,7 @@ Merge
 
 - 모든 작업은 Issue와 연결합니다.
 - 일반 작업 PR은 `dev` 브랜치를 대상으로 생성합니다.
-- 파트장 Approve 후 Merge합니다.
+- 팀원 Approve 후 Merge합니다.
 - CodeRabbit Review 내용을 모두 Resolve한 후 Merge합니다.
 
 ---
