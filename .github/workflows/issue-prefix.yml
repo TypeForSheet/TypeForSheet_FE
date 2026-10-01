@@ -16,16 +16,37 @@ jobs:
         uses: actions/github-script@v8
         with:
           script: |
-            const issue = context.payload.issue;
-            const prefix = `[TFS-${issue.number}]`;
+            const currentIssue = context.payload.issue;
 
-            if (issue.title.startsWith(prefix)) {
-              return;
-            }
+            const issues = await github.paginate(
+              github.rest.issues.listForRepo,
+              {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'all',
+                per_page: 100,
+              }
+            );
+
+            const onlyIssues = issues
+              .filter((item) => !item.pull_request)
+              .sort((a, b) => a.number - b.number);
+
+            const issueIndex = onlyIssues.findIndex(
+              (item) => item.number === currentIssue.number
+            );
+
+            const tfsNumber = issueIndex + 1;
+            const prefix = `[TFS-${tfsNumber}]`;
+
+            const cleanTitle = currentIssue.title.replace(
+              /^\[TFS-\d+\]\s*/,
+              ''
+            );
 
             await github.rest.issues.update({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: issue.number,
-              title: `${prefix} ${issue.title}`,
+              issue_number: currentIssue.number,
+              title: `${prefix} ${cleanTitle}`,
             });
