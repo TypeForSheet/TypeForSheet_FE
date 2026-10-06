@@ -1,4 +1,4 @@
-import { primitiveTokens } from './primitive';
+import { primitiveTokens } from './tokens/primitive';
 
 export const radius = {
   s: primitiveTokens.unit[8],
