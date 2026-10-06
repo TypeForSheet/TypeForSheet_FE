@@ -1,9 +1,11 @@
+import { primitiveTokens } from './primitive';
+
 export const layout = {
   grid: {
     columns: 5,
-    margin: 20,
-    gutter: 12,
+    margin: primitiveTokens.unit[20],
+    gutter: primitiveTokens.unit[12],
   },
 
-  screenPaddingHorizontal: 20,
+  screenPaddingHorizontal: primitiveTokens.unit[20],
 } as const;
