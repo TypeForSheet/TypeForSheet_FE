@@ -28,15 +28,13 @@ jobs:
               }
             );
 
-            const onlyIssues = issues
-              .filter((item) => !item.pull_request)
-              .sort((a, b) => a.number - b.number);
-
-            const issueIndex = onlyIssues.findIndex(
-              (item) => item.number === currentIssue.number
+            const previousIssues = issues.filter(
+              (item) =>
+                !item.pull_request &&
+                item.number < currentIssue.number
             );
 
-            const tfsNumber = issueIndex + 1;
+            const tfsNumber = previousIssues.length + 1;
             const prefix = `[TFS-${tfsNumber}]`;
 
             const cleanTitle = currentIssue.title.replace(
